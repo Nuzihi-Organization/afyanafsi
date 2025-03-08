@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "afyanafsi"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "afyanafsi-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

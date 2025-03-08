@@ -1,0 +1,35 @@
+rules_version = '2';
+
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // General rule for users' documents
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // General rule for collections where each document is owned by a specific user
+    match /{collection}/{docId} {
+      allow create: if request.auth != null;
+      allow read, update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // Rule for public collections where anyone can create documents but no one can read them
+    match /public/{docId} {
+      allow create: if true;
+      allow read: if false; // No one can read these documents
+    }
+
+    // Rule for collections with public read access (e.g., public content or news)
+    match /publicRead/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Rule for restricted collections where only admins can perform operations
+    match /admin/{docId} {
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}
