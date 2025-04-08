@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../index.css";
+
 import { View, Text, ImageBackground, TouchableOpacity, Animated, Easing } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
@@ -38,23 +39,23 @@ const SplashScreen = () => {
       source={{ uri: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" }}
       className="flex-1 justify-center items-center"
     >
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <View className="flex-1 justify-center items-center">
         {/* App Name with Floating Animation */}
         <Animated.Text
           style={{ transform: [{ translateY }] }}
           className="text-6xl font-bold text-white text-center"
         >
-          MindEase
+          AfyaNafsi
         </Animated.Text>
         {/* Tagline */}
         <Text className="text-xl text-white mt-4 text-center">
-          Your journey to mental wellness starts here.
+          Wellness Redefined
         </Text>
         {/* Get Started Button */}
         <TouchableOpacity
-          onPress={() => navigation.navigate("Home")} // Replace "Home" with your desired screen
-          className="mt-8 px-8 py-3 bg-blue-600 rounded-lg"
+          onPress={() => navigation.navigate("Signup")} // Replace "Home" with your desired screen
+          className="mt-32 px-8 py-3 bg-blue-600 rounded-lg"
         >
           <Text className="text-white text-lg">Get Started</Text>
         </TouchableOpacity>
