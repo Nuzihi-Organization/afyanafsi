@@ -86,7 +86,7 @@ const Signup = () => {
       }));
       
       // Navigate to Main Screen or preferences setup
-      navigation.navigate("MainScreen");
+      navigation.navigate("PrefferencesScreen");
     } catch (error) {
       const errorMsg = 
         error.response?.data?.message || 
@@ -174,7 +174,7 @@ const Signup = () => {
                 value={confirmPassword}
               />
 
-              {error && <Text className="text-red-500 text-xs mb-4">{error}</Text>}
+              {error && <Text className="text-red-500 text-sm mb-4">{error}</Text>}
 
               <TouchableOpacity
                 className="bg-black py-3 rounded-lg mb-4"
@@ -201,14 +201,14 @@ const Signup = () => {
 
               <Text className="text-center text-xs text-black">
                 By clicking continue, you agree to our{' '}
-                <Text className="text-pink-600 underline">Terms of Service</Text>{' '}
-                and <Text className="text-pink-600 underline">Privacy Policy</Text>
+                <Text className="text-black underline">Terms of Service</Text>{' '}
+                and <Text className="text-black underline">Privacy Policy</Text>
               </Text>
 
               <Text className="text-center text-xs text-black mt-6">
                 Already have an account?{' '}
                 <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                  <Text className="text-blue-600 underline">Sign in</Text>
+                  <Text className="text-white underline">Sign in</Text>
                 </TouchableOpacity>
               </Text>
             </View>
