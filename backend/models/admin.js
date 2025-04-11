@@ -48,6 +48,10 @@ AdminSchema.pre('save', async function(next) {
 
 // Compare entered password with stored hashed password
 AdminSchema.methods.comparePassword = async function(enteredPassword) {
+  // Check if this.password exists before comparing
+  if (!this.password) {
+    return false;
+  }
   return await bcrypt.compare(enteredPassword, this.password);
 };
 

@@ -28,6 +28,8 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/auth/admin', require('./routes/adminAuthRoutes')); // New admin routes
+app.use('/api/auth/therapist', require('./routes/therapistRoutes')); // New therapist routes
 // Use any other route files you have
 
 // Health check route

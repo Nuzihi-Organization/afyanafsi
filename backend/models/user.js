@@ -53,10 +53,16 @@ UserSchema.pre('save', async function(next) {
   next();
 });
 
-// Add comparePassword method for authentication
-UserSchema.methods.comparePassword = async function(enteredPassword) {
+// Compare entered password with stored hashed password
+UserSchema.methods.comparePassword = async function (enteredPassword) {
+  // Defensive check to ensure both values exist
+  if (!enteredPassword || !this.password) {
+    return false;
+  }
+  
   return await bcrypt.compare(enteredPassword, this.password);
 };
+
 
 // Add matchPassword method as an alias to comparePassword for backward compatibility
 UserSchema.methods.matchPassword = async function(enteredPassword) {
