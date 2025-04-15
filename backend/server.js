@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 // Import any other route files you have
@@ -15,6 +17,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+// for nuzihi ai agent
+app.use(helmet());
+app.use(morgan('dev'));
 
 // Define a route for the root path
 app.get('/', (req, res) => {
@@ -23,6 +28,17 @@ app.get('/', (req, res) => {
     status: 'Server is running',
     version: '1.0.0'
   });
+});
+
+// Nuzihi AI Agent Routes
+app.get('/', (req, res) => {
+  res.send('AI Assistant API is running');
+});
+
+const AI_PORT = process.env.AI_PORT
+// Start server
+app.listen(AI_PORT, () => {
+  console.log(`AI Agent service Server is running on port ${AI_PORT}`);
 });
 
 // Routes

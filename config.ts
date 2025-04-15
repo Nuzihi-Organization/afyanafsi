@@ -1,1 +1,1 @@
-export const API_URL = 'https://your-api-url.com'; // Replace with your actual API URL
+export const API_URL = 'http://localhost:5000'; // Replace with your actual API URL
