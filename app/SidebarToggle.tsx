@@ -19,7 +19,7 @@ const SidebarToggle: React.FC<SidebarToggleProps> = ({ onPress, isOpen }) => {
   const rotation = useSharedValue(0);
   const scale = useSharedValue(1);
 
-  // Create a subtle animation when the sidebar opens or closes
+  // subtle animation when the sidebar opens or closes
   React.useEffect(() => {
     if (isOpen) {
       rotation.value = withTiming(90, { duration: 300 });

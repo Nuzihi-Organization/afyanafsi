@@ -183,8 +183,8 @@ const SidebarContent: React.FC<SidebarContentProps> = ({
             <MaterialCommunityIcons name="brain" size={28} color="#38b2ac" />
           </View>
           <View className="ml-3">
-            <Text className="text-white text-lg font-bold">MindWell</Text>
-            <Text className="text-teal-100 text-xs">Therapy & Support</Text>
+            <Text className="text-white text-lg font-bold">Afya Nafsi</Text>
+            <Text className="text-teal-100 text-xs">Healthy Minds</Text>
           </View>
         </View>
         <TouchableOpacity onPress={onClose} className="p-2">
@@ -199,7 +199,7 @@ const SidebarContent: React.FC<SidebarContentProps> = ({
             <FontAwesome5 name="user-alt" size={16} color="#38b2ac" />
           </View>
           <View className="ml-3">
-            <Text className="text-gray-800 dark:text-gray-100 font-medium">User Profile</Text>
+            <Text className="text-gray-800 dark:text-gray-100 font-medium">My Profile</Text>
             <TouchableOpacity onPress={() => handleNavigation('Profile')}>
               <Text className="text-teal-600 text-xs">View Profile</Text>
             </TouchableOpacity>

@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-gesture-handler';
 
-// Import your screens
 import HomeScreen from './HomeScreen';
 import ChatScreen from './ChatScreen';
 import AIchat from './AIchat';
@@ -24,7 +23,7 @@ import AdminLoginScreen from './AdminLoginScreen';
 import AdminSignupScreen from './AdminSignupScreen';
 import RescheduleBooking from './RescheduleBooking';
 
-// Import sidebar components
+//  sidebar components
 import SidebarMenu from './SidebarMenu';
 import SidebarToggle from './SidebarToggle';
 
