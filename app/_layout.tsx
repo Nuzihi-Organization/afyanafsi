@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-gesture-handler';
@@ -27,6 +28,7 @@ import RescheduleBooking from './RescheduleBooking';
 import SidebarMenu from './SidebarMenu';
 import SidebarToggle from './SidebarToggle';
 
+
 const Stack = createStackNavigator();
 
 export default function Layout() {
@@ -43,6 +45,10 @@ export default function Layout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       {/* <NavigationContainer> */}
+      <ScrollView 
+  className={`flex-1 ${isDarkMode ? "bg-gray-900" : "bg-gray-50"}`}
+  contentContainerStyle={{ flexGrow: 1 }}
+></ScrollView>
         <SafeAreaView className="flex-1 bg-white dark:bg-gray-900">
           <StatusBar
             barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
